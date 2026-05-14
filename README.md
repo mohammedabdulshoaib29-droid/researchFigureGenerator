@@ -13,7 +13,7 @@ Researchers often spend time manually converting method descriptions into diagra
 - grouping stages into sections
 - rendering a downloadable SVG or PNG figure locally
 
-## Why this is good for interviews
+
 
 
 ## Live demo
