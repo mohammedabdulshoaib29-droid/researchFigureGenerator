@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Figure Generator</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Zero-cost GenAI MVP</p>
+      <h1>Research Figure Generator</h1>
+      <p class="hero-copy">
+        Paste a paper abstract or method section, send it to a local Ollama model, and turn the result into a structured figure.
+      </p>
+    </section>
+
+    <section class="panel controls">
+      <div class="deployment-note">
+        <strong>Heads up:</strong> this version is deployable on Vercel as a static app, but figure generation only works for users who have <code>Ollama</code> running locally with a compatible model.
+      </div>
+
+      <div class="field-row">
+        <label class="field">
+          <span>Ollama model</span>
+          <input id="modelInput" type="text" value="qwen2.5:7b-instruct" placeholder="qwen2.5:7b-instruct">
+        </label>
+        <label class="field">
+          <span>Ollama endpoint</span>
+          <input id="endpointInput" type="text" value="http://localhost:11434/api/generate" placeholder="http://localhost:11434/api/generate">
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Research text</span>
+        <textarea id="paperInput" rows="12" placeholder="Paste an abstract or method section here..."></textarea>
+      </label>
+
+      <div class="actions">
+        <button id="sampleButton" class="secondary">Load sample</button>
+        <button id="generateButton">Generate figure</button>
+        <button id="downloadButton" class="secondary" disabled>Download SVG</button>
+      </div>
+
+      <div class="status-row">
+        <p id="statusText" class="status idle">Ready for input.</p>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <article class="panel output-panel">
+        <div class="panel-head">
+          <h2>Figure</h2>
+          <p>Rendered from extracted nodes and edges.</p>
+        </div>
+        <div id="diagramMount" class="diagram-mount empty">
+          <p class="placeholder">Your generated figure will appear here.</p>
+        </div>
+      </article>
+
+      <article class="panel inspector-panel">
+        <div class="panel-head">
+          <h2>Structured output</h2>
+          <p>Inspectable JSON keeps the system interview-friendly and debuggable.</p>
+        </div>
+        <pre id="jsonOutput" class="json-output">{
+  "title": "",
+  "nodes": [],
+  "edges": [],
+  "notes": []
+}</pre>
+      </article>
+    </section>
+
+    <section class="panel notes-panel">
+      <div class="panel-head">
+        <h2>How this MVP works</h2>
+        <p>Single local model call, schema cleanup, then SVG rendering.</p>
+      </div>
+      <ol class="steps">
+        <li>Extract pipeline steps from research text into strict JSON.</li>
+        <li>Validate and normalize nodes, labels, and flow connections.</li>
+        <li>Render a clean SVG figure that you can inspect or download.</li>
+      </ol>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
