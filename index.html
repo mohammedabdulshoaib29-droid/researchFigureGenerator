@@ -41,6 +41,7 @@
         <button id="sampleButton" class="secondary">Load sample</button>
         <button id="generateButton">Generate figure</button>
         <button id="downloadButton" class="secondary" disabled>Download SVG</button>
+        <button id="downloadPngButton" class="secondary" disabled>Download PNG</button>
       </div>
 
       <div class="status-row">
@@ -52,10 +53,20 @@
       <article class="panel output-panel">
         <div class="panel-head">
           <h2>Figure</h2>
-          <p>Rendered from extracted nodes and edges.</p>
+          <p>Rendered as a styled academic figure with layout-aware sections.</p>
         </div>
         <div id="diagramMount" class="diagram-mount empty">
           <p class="placeholder">Your generated figure will appear here.</p>
+        </div>
+        <div id="figureMeta" class="figure-meta empty">
+          <div>
+            <p class="meta-label">Layout</p>
+            <p id="layoutValue" class="meta-value">Not generated yet</p>
+          </div>
+          <div>
+            <p class="meta-label">Caption</p>
+            <p id="captionValue" class="meta-value">Generate a figure to create a paper-style caption.</p>
+          </div>
         </div>
       </article>
 
@@ -76,12 +87,12 @@
     <section class="panel notes-panel">
       <div class="panel-head">
         <h2>How this MVP works</h2>
-        <p>Single local model call, schema cleanup, then SVG rendering.</p>
+        <p>Single local model call, schema cleanup, smart layout selection, then figure rendering.</p>
       </div>
       <ol class="steps">
         <li>Extract pipeline steps from research text into strict JSON.</li>
-        <li>Validate and normalize nodes, labels, and flow connections.</li>
-        <li>Render a clean SVG figure that you can inspect or download.</li>
+        <li>Validate and normalize nodes, labels, sections, and flow connections.</li>
+        <li>Pick a layout, draw a polished SVG figure, and export it as SVG or PNG.</li>
       </ol>
     </section>
   </main>
