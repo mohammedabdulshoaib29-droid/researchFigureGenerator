@@ -15,16 +15,6 @@ Researchers often spend time manually converting method descriptions into diagra
 
 ## Why this is good for interviews
 
-This project shows:
-
-- practical GenAI usage without paid APIs
-- structured output design instead of raw chatbot answers
-- prompt engineering for faithfulness and brevity
-- product thinking around explainability and exportable results
-
-Interview-safe framing:
-
-> Inspired by research systems like Google Research's PaperVizAgent, I built a zero-cost MVP that uses a local LLM to convert paper text into structured pipeline figures.
 
 ## Live demo
 
