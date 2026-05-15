@@ -12,10 +12,6 @@ Researchers often spend time manually converting method descriptions into diagra
 - converting them into a strict JSON schema
 - grouping stages into sections
 - rendering a downloadable SVG or PNG figure locally
-
-
-
-
 ## Live demo
 
 Open the deployed app here:
@@ -102,3 +98,11 @@ Then explain the output in interviews:
 - support Mermaid export alongside SVG
 - benchmark multiple Ollama models on latency and faithfulness
 - allow manual node editing before final export
+
+## Author
+
+Created by Shoaib
+
+GitHub repository:
+
+[https://github.com/mohammedabdulshoaib29-droid/researchFigureGenerator](https://github.com/mohammedabdulshoaib29-droid/researchFigureGenerator)
