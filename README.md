@@ -85,13 +85,6 @@ Use a method paragraph like:
 We propose a multimodal pipeline for pneumonia detection. Chest X-ray images are first normalized and passed into a convolutional encoder to extract visual features. Patient metadata including age, temperature, and oxygen saturation is transformed with a metadata encoder. The two embeddings are fused in a cross-attention fusion module and forwarded to a binary classifier. Low-confidence predictions are routed to a calibration module, which sends a refinement signal back to the fusion module before the final decision is produced.
 ```
 
-Then explain the output in interviews:
-
-- the local model extracts core steps
-- the app normalizes them into a diagram schema
-- the renderer turns them into a more paper-style figure
-- the architecture is easy to extend with a critic pass or model benchmarking
-
 ## Smart next steps
 
 - add a critic pass with the same local model
