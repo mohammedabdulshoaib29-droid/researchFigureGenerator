@@ -99,10 +99,4 @@ Then explain the output in interviews:
 - benchmark multiple Ollama models on latency and faithfulness
 - allow manual node editing before final export
 
-## Author
 
-Created by Shoaib
-
-GitHub repository:
-
-[https://github.com/mohammedabdulshoaib29-droid/researchFigureGenerator](https://github.com/mohammedabdulshoaib29-droid/researchFigureGenerator)
